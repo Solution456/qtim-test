@@ -1,22 +1,21 @@
 :root {
-    --text-primary: #101010;
-    --text-secondary: #232323;
-    --text-tertiary: #868686;
-    --text-tertiary-2: #F3F3F3;
+  --text-primary: #101010;
+  --text-secondary: #232323;
+  --text-tertiary: #868686;
+  --text-tertiary-2: #f3f3f3;
+  --text-white: #ffffff;
 
+  --background-primary: #ffffff;
 
-    --background-primary: #ffffff;
+  --color-black: #101010;
+  --color-tertiary: #868686;
+  --color-tertiary-2: #f3f3f3;
+  --color-secondary: #e2beff;
+  --color-accent: #1059c8;
+  --color-accent-2: #7941a7;
+  --color-succest: #9effbf;
 
-
-    --color-black: #101010;
-    --color-secondary: #E2BEFF;
-    --color-accent: #1059C8;
-    --color-accent-2: #7941A7;
-    --color-succest: #9EFFBF;
-
-
-    --header-height: 121px;
-
+  --header-height: 121px;
 }
 
 // Text
@@ -24,11 +23,13 @@ $text-primary: var(--text-primary);
 $text-secondary: var(--text-secondary);
 $text-tertiary: var(--text-tertiary);
 $text-tertiary-2: var(--text-tertiary-2);
-
+$text-white: var(--text-white);
 
 // Colors
 $background-primary: var(--background-primary);
 
+$color-tertiary: var(--color-tertiary);
+$color-tertiary-2: var(--color-tertiary-2);
 $color-black: var(--color-black);
 $color-secondary: var(--color-secondary);
 $color-accent: var(--color-accent);

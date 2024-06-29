@@ -1,131 +1,126 @@
-
-
 $spaces: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, auto);
 $space-multiplier: 4;
 
-
 @each $space in $spaces {
-
-   @if($space == auto) {
-        .m-#{$space} { 
-            margin: #{$space};
-        }
-
-        .mx-#{$space} {
-            margin-left: #{$space};
-            margin-right: #{$space};
-        }
-
-        .my-#{$space} {
-            margin-top: #{$space};
-            margin-bottom: #{$space};
-        }
-
-        .mt-#{$space} {
-            margin-top: #{$space};
-        }
-
-        .mr-#{$space} {
-            margin-right: #{$space};
-        }
-
-        .mb-#{$space} {
-            margin-bottom: #{$space};
-        }
-
-        .ml-#{$space} {
-            margin-left: #{$space};
-        }
-
-        .p-#{$space} {
-            padding: #{$space};
-        }
-
-        .px-#{$space} {
-            padding-left: #{$space};
-            padding-right: #{$space};
-        }
-
-        .py-#{$space} {
-            padding-top: #{$space};
-            padding-bottom: #{$space};
-        }
-
-        .pt-#{$space} {
-            padding-top: #{$space};
-        }
-
-        .pr-#{$space} {
-            padding-right: #{$space};
-        }
-
-        .pb-#{$space} {
-            padding-bottom: #{$space};
-        }
-
-        .pl-#{$space} {
-            padding-left: #{$space};
-        }
-
-   } @else {
-        .m-#{$space} { 
-            margin: #{$space * $space-multiplier}px;
-        }
-
-        .mx-#{$space} {
-            margin-left: #{$space * $space-multiplier}px;
-            margin-right: #{$space * $space-multiplier}px;
-        }
-
-        .my-#{$space} {
-            margin-top: #{$space * $space-multiplier}px;
-            margin-bottom:  #{$space * $space-multiplier}px;
-        }
-
-        .mt-#{$space} {
-            margin-top: #{$space * $space-multiplier}px;
-        }
-
-        .mr-#{$space} {
-            margin-right: #{$space * $space-multiplier}px;
-        }
-
-        .mb-#{$space} {
-            margin-bottom: #{$space * $space-multiplier}px;
-        }
-
-        .ml-#{$space} {
-            margin-left: #{$space * $space-multiplier}px;
-        }
-
-        .p-#{$space} {
-            padding: #{$space * $space-multiplier}px;
-        }
-
-        .px-#{$space} {
-            padding-left: #{$space * $space-multiplier}px;
-            padding-right: #{$space * $space-multiplier}px;
-        }
-
-        .py-#{$space} {
-            padding-top: #{$space * $space-multiplier}px;
-            padding-bottom: #{$space * $space-multiplier}px;
-        }
-
-        .pt-#{$space} {
-            padding-top: #{$space * $space-multiplier}px;
-        }
-
-        .pr-#{$space} {
-            padding-right: #{$space * $space-multiplier}px;
-        }
-
-        .pb-#{$space} {
-            padding-bottom: #{$space * $space-multiplier}px;
-        }
-
-        .pl-#{$space} {
-            padding-left: #{$space * $space-multiplier}px;
-        }
+  @if ($space == auto) {
+    .m-#{$space} {
+      margin: #{$space};
     }
+
+    .mx-#{$space} {
+      margin-left: #{$space};
+      margin-right: #{$space};
+    }
+
+    .my-#{$space} {
+      margin-top: #{$space};
+      margin-bottom: #{$space};
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$space};
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$space};
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$space};
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$space};
+    }
+
+    .p-#{$space} {
+      padding: #{$space};
+    }
+
+    .px-#{$space} {
+      padding-left: #{$space};
+      padding-right: #{$space};
+    }
+
+    .py-#{$space} {
+      padding-top: #{$space};
+      padding-bottom: #{$space};
+    }
+
+    .pt-#{$space} {
+      padding-top: #{$space};
+    }
+
+    .pr-#{$space} {
+      padding-right: #{$space};
+    }
+
+    .pb-#{$space} {
+      padding-bottom: #{$space};
+    }
+
+    .pl-#{$space} {
+      padding-left: #{$space};
+    }
+  } @else {
+    .m-#{$space} {
+      margin: #{$space * $space-multiplier}px;
+    }
+
+    .mx-#{$space} {
+      margin-left: #{$space * $space-multiplier}px;
+      margin-right: #{$space * $space-multiplier}px;
+    }
+
+    .my-#{$space} {
+      margin-top: #{$space * $space-multiplier}px;
+      margin-bottom: #{$space * $space-multiplier}px;
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$space * $space-multiplier}px;
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$space * $space-multiplier}px;
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$space * $space-multiplier}px;
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$space * $space-multiplier}px;
+    }
+
+    .p-#{$space} {
+      padding: #{$space * $space-multiplier}px;
+    }
+
+    .px-#{$space} {
+      padding-left: #{$space * $space-multiplier}px;
+      padding-right: #{$space * $space-multiplier}px;
+    }
+
+    .py-#{$space} {
+      padding-top: #{$space * $space-multiplier}px;
+      padding-bottom: #{$space * $space-multiplier}px;
+    }
+
+    .pt-#{$space} {
+      padding-top: #{$space * $space-multiplier}px;
+    }
+
+    .pr-#{$space} {
+      padding-right: #{$space * $space-multiplier}px;
+    }
+
+    .pb-#{$space} {
+      padding-bottom: #{$space * $space-multiplier}px;
+    }
+
+    .pl-#{$space} {
+      padding-left: #{$space * $space-multiplier}px;
+    }
+  }
 }

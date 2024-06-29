@@ -1,42 +1,53 @@
 @font-face {
-    font-family: "TTCommons";
-    font-style: normal;
-    font-weight: 400;
-    src: local("TTCommonsen"), url("fonts/TTCommons-Regular.ttf") format("truetype");
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local("TTCommonsen"),
+    url("fonts/TTCommons-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "TTCommons";
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: local("TTCommonsen"), url("fonts/TTCommons-Light.ttf") format("truetype");
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:
+    local("TTCommonsen"),
+    url("fonts/TTCommons-Light.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "TTCommons";
-    font-style: normal;
-    font-weight: 700;
-    src: local("TTCommonsen"), url("fonts/TTCommons-Bold.ttf") format("truetype");
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local("TTCommonsen"),
+    url("fonts/TTCommons-Bold.ttf") format("truetype");
 }
 @font-face {
-    font-family: "TTCommons";
-    font-style: normal;
-    font-weight: 500;
-    src: local("TTCommonsen"), url("fonts/TTCommons-Medium.ttf") format("truetype");
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("TTCommonsen"),
+    url("fonts/TTCommons-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "TTCommons";
-    font-style: normal;
-    font-weight: 800;
-    src: local("TTCommonsen"), url("fonts/TTCommons-ExtraBold.ttf") format("truetype");
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 800;
+  src:
+    local("TTCommonsen"),
+    url("fonts/TTCommons-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "TTCommons";
-    font-style: normal;
-    font-weight: 900;
-    src: local("TTCommonsen"), url("fonts/TTCommons-Black.ttf") format("truetype");
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 900;
+  src:
+    local("TTCommonsen"),
+    url("fonts/TTCommons-Black.ttf") format("truetype");
 }
-

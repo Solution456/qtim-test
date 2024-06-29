@@ -1,15 +1,23 @@
 @import 'variables.scss', 'fonts.scss';
 @import './utility/spaces.scss';
 
-
 html {
-    font-family: 'TTCommons';
+  font-family: 'TTCommons';
 }
 
-
 .container {
-    max-width: 1217px;
-    margin: 0 auto;
+  max-width: 1217px;
+  margin: 0 auto;
 
-    min-height: calc(100vh - $header-height);
+  @media screen and (max-width: 1024px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0 10px;
+  }
 }
