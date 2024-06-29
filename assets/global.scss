@@ -1,0 +1,15 @@
+@import 'variables.scss', 'fonts.scss';
+@import './utility/spaces.scss';
+
+
+html {
+    font-family: 'TTCommons';
+}
+
+
+.container {
+    max-width: 1217px;
+    margin: 0 auto;
+
+    min-height: calc(100vh - $header-height);
+}

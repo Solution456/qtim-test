@@ -1,0 +1,38 @@
+:root {
+    --text-primary: #101010;
+    --text-secondary: #232323;
+    --text-tertiary: #868686;
+    --text-tertiary-2: #F3F3F3;
+
+
+    --background-primary: #ffffff;
+
+
+    --color-black: #101010;
+    --color-secondary: #E2BEFF;
+    --color-accent: #1059C8;
+    --color-accent-2: #7941A7;
+    --color-succest: #9EFFBF;
+
+
+    --header-height: 121px;
+
+}
+
+// Text
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-tertiary: var(--text-tertiary);
+$text-tertiary-2: var(--text-tertiary-2);
+
+
+// Colors
+$background-primary: var(--background-primary);
+
+$color-black: var(--color-black);
+$color-secondary: var(--color-secondary);
+$color-accent: var(--color-accent);
+$color-accent-2: var(--color-accent-2);
+$color-succest: var(--color-succest);
+
+$header-height: var(--header-height);
