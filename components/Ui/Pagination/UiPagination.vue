@@ -10,10 +10,6 @@ const props = defineProps<{
 
 }>()
 
-// const emits = defineEmits<{
-//   (e: 'change', page: number): void
-// }>()
-
 const model = defineModel({ required: true, default: 1 })
 
 const totalPages = computed(() => Math.ceil(props.totalElements ? props.totalElements / props.elements : 0))
