@@ -5,40 +5,41 @@ import ChevronRightIcon from '@/components/Icons/ChevronRightIcon.vue'
 
 const props = defineProps<{
   elements: number
-  totalElements: number
+  totalElements: number | undefined
   page?: number
 
 }>()
 
-const emits = defineEmits<{
-  (e: 'change', page: number): void
-}>()
+// const emits = defineEmits<{
+//   (e: 'change', page: number): void
+// }>()
 
-const currentPage = ref(1)
-const totalPages = computed(() => Math.ceil(props.totalElements / props.elements))
+const model = defineModel({ required: true, default: 1 })
 
-const isLastPage = computed(() => currentPage.value === totalPages.value)
-const isFirstPage = computed(() => currentPage.value === 1)
+const totalPages = computed(() => Math.ceil(props.totalElements ? props.totalElements / props.elements : 0))
+
+const isLastPage = computed(() => model.value === totalPages.value)
+const isFirstPage = computed(() => model.value === 1)
 
 function changePage(page: number) {
-  currentPage.value = page
+  model.value = page
 }
 
 function prevPage() {
-  if (currentPage.value > 1) {
-    currentPage.value -= 1
+  if (model.value > 1) {
+    model.value -= 1
   }
 }
 
 function nextPage() {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value += 1
+  if (model.value < totalPages.value) {
+    model.value += 1
   }
 }
 
-watch(currentPage, (newPage) => {
-  emits('change', newPage)
-})
+// watch(model, (newPage) => {
+//   emits('change', newPage)
+// })
 </script>
 
 <template>
@@ -50,12 +51,12 @@ watch(currentPage, (newPage) => {
       <ChevronRightIcon />
     </UiPaginationButton>
 
-    <div>
+    <div class="pagination__items">
       <UiPaginationItem
         v-for="index in totalPages"
         :key="index"
         :index="index"
-        :active="currentPage === index"
+        :active="model === index"
         @click="changePage(index)"
       />
     </div>
@@ -75,5 +76,10 @@ watch(currentPage, (newPage) => {
   align-items: center;
   padding: 10px 0;
   gap: 10px;
+
+  &__items {
+    display: flex;
+    gap: 10px;
+  }
 }
 </style>

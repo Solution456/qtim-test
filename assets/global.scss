@@ -1,8 +1,16 @@
-@import 'variables.scss', 'fonts.scss';
+@import 'variables.scss', 'fonts.scss', 'typography.scss';
 @import './utility/spaces.scss';
 
 html {
   font-family: 'TTCommons';
+}
+
+.fill-height {
+  height: 100%;
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
 }
 
 .container {

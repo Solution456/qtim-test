@@ -1,15 +1,21 @@
 <script setup lang="ts">
 import UiButton from '@/components/Ui/UiButton.vue'
+import UiIconButton from '@/components/Ui/UiIconButton.vue'
+import UnitedKingdomIcon from '@/components/Icons/UnitedKingdomIcon.vue'
 </script>
 
 <template>
   <header class="header">
     <div class="header-container px-10">
       <div class="header-logo">
-        <NuxtImg
-          src="/logo.png"
-          alt="logo"
-        />
+        <NuxtLink to="/">
+          <NuxtImg
+            src="/logo.png"
+            width="84"
+            height="25"
+            alt="logo"
+          />
+        </NuxtLink>
       </div>
 
       <div class="header-right">
@@ -29,7 +35,12 @@ import UiButton from '@/components/Ui/UiButton.vue'
         </nav>
 
         <div class="header-actions">
-          <button>Get in touch</button>
+          <UiIconButton
+            width="52"
+            variant="outline"
+          >
+            <UnitedKingdomIcon />
+          </UiIconButton>
           <UiButton rounded>
             Let’s work
           </UiButton>
@@ -65,6 +76,18 @@ import UiButton from '@/components/Ui/UiButton.vue'
     align-items: center;
     gap: 90px;
     justify-content: space-between;
+  }
+
+  &-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &-logo {
+    a {
+      display: inline-block;
+    }
   }
 
   .nav {

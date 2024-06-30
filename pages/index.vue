@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import type { Article } from '@/types'
+import { articlesService } from '@/services'
+import { usePagination } from '@/composables'
+
 import ArticleList from '@/components/Articles/ArticleList.vue'
 import UiPagination from '@/components/Ui/Pagination/UiPagination.vue'
 
@@ -7,77 +9,20 @@ definePageMeta({
   layout: 'default-layout',
 })
 
-const articles: Article[] = [
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
+const elementsPerPage = 8
 
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
+const { data: articles } = await useAsyncData('articles', () => articlesService().get())
+const { currentPage, paginationItems, totalElements, isLoading } = usePagination(articles.value, elementsPerPage)
 
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
-
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
-
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
-
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
-
-  {
-    id: 1,
-    createdAt: '2021-04-23T05:11:54.250Z',
-    title: 'Licensed Granite Chair',
-    preview:
-      'programming the port won\'t do anything, we need to copy the auxiliary USB system!',
-    image: 'https://i.pinimg.com/564x/cc/0f/2a/cc0f2a5ebdc6fc32b4ac3fac0eea3567.jpg',
-    decription: 'fasfsaf',
-  },
-]
+useHead({
+  title: 'Articles',
+  meta: [
+    {
+      name: 'description',
+      content: 'Articles',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -86,19 +31,30 @@ const articles: Article[] = [
       Articles
     </h1>
 
-    <ArticleList :articles="articles" />
+    <ArticleList
+      v-if="paginationItems.length"
+      :is-loading="isLoading"
+      :articles="paginationItems"
+    />
+
+    <div
+      v-else
+      class="fill-height"
+    >
+      No articles
+    </div>
 
     <UiPagination
-      :elements="8"
-      :total-elements="articles.length"
-      @change="console.log"
+      v-if="totalElements"
+      v-model="currentPage"
+      :elements="elementsPerPage"
+      :total-elements="totalElements"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .title {
-  font-size: 50px;
   font-weight: 400;
   font-size: 84px;
   margin-top: 120px;

@@ -3,6 +3,6 @@ export interface Article {
   title: string
   createdAt: Date | string
   preview: string
-  decription: string
+  description: string
   image: string
 }

@@ -1,0 +1,27 @@
+@import 'variables';
+
+.title-1 {
+  color: $text-primary;
+  font-weight: 400;
+  font-size: 84px;
+  line-height: 1;
+}
+
+.body-base {
+  color: $text-primary;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.2rem;
+}
+
+.body-lg {
+  @extend .body-base;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.body-sm {
+  @extend .body-base;
+  font-size: 16px;
+  line-height: 1;
+}

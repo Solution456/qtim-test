@@ -38,7 +38,7 @@ const classes = computed(() => {
     color 0.2s ease;
 
   &:hover {
-    background-color: $color-tertiary;
+    background-color: $color-tertiary-3;
     color: $text-white;
   }
 

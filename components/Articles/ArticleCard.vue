@@ -25,9 +25,11 @@ const styles = computed(() => {
     <div class="article-card__header">
       <NuxtImg
         :src="article.image"
+        :placeholder="[280, 280]"
+        placeholder-class="image-placeholder"
         width="280"
         fit="cover"
-        alt="image"
+        loading="lazy"
       />
     </div>
 
@@ -51,7 +53,16 @@ const styles = computed(() => {
 
       <div class="article-card__footer">
         <slot name="footer">
-          <NuxtLink class="more-btn">
+          <NuxtLink
+            class="more-btn"
+            :to=" {
+
+              name: 'articles-id',
+              params: {
+                id: article.id,
+              },
+            }"
+          >
             Read more
           </NuxtLink>
         </slot>
@@ -88,5 +99,10 @@ const styles = computed(() => {
       opacity: 1;
     }
   }
+}
+
+.image-placeholder {
+  background-color: $color-tertiary;
+  border: none;
 }
 </style>

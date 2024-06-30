@@ -35,13 +35,12 @@ const classes = computed(() => {
   height: 44px;
   border-radius: 14px;
   border: none;
-  background-color: $text-tertiary;
+  background-color: $color-tertiary-3;
   color: $text-primary;
   cursor: pointer;
 
-  transition:
-    background-color,
-    color 0.2s ease;
+  transition: all 200ms ease;
+  transition-property: background-color, color;
 
   &:hover {
     background-color: $color-black;
@@ -49,7 +48,7 @@ const classes = computed(() => {
   }
 
   &--disabled {
-    background-color: $text-tertiary-2;
+    background-color: $color-tertiary-2;
 
     cursor: not-allowed;
   }
